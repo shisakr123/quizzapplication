@@ -1,0 +1,56 @@
+{% load static %}
+ 
+<style>
+  .greet{
+    font-size: 25px;
+    font-style: italic;
+    color: #00FF00;
+    margin-right: 20px;
+  }
+</style>
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+ 
+    <ul class="navbar-nav">
+      
+      {% comment %} <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li> {% endcomment %}
+      <span ><a  class="greet" href="{% url 'home' %}">Home</a></span>
+      {% comment %} <a class="navbar-brand" href="{% url 'home'%}"> Quizz Webapplication </a> {% endcomment %}
+
+      </li>
+      <li class="nav-item active">
+        
+      {% if request.user.is_staff %}
+      </li>
+      {% comment %} <li class="nav-item active">
+        <a class="nav-link" href="{% url 'addQuestion' %}">Add Question</a>
+      </li> {% endcomment %}
+      <span ><a  class="greet" href="{% url 'addQuestion' %}">Add Question</a></span>
+
+      {% endif %} 
+ 
+      </li>
+      {% comment %} <li class="nav-item"> {% endcomment %}
+        {% comment %} <a class="nav-link" href="{% url 'login' %}">Login</a> {% endcomment %}
+        <span ><a  class="greet" href="{% url 'login' %}">Login</a></span>
+
+      {% comment %} </li> {% endcomment %}
+
+      {% comment %} <li class="nav-item">
+        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+      </li> {% endcomment %}
+      {% comment %} <li class="nav-item">
+        <a class="nav-link" href="{% url 'edit' %}">Edit</a>
+      </li> {% endcomment %}
+    </ul>
+  </div>
+ 
+  <span class="greet">Hello, {{request.user}}</span>
+  <span ><a  class="greet" href="{% url 'logout' %}">Logout</a></span>
+</nav>

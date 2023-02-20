@@ -1,0 +1,14 @@
+{% extends 'dependencies.html' %}
+{% load static %}
+{% block content %}
+<div class="container jumbotron">
+    <h1 style="text-align:center; font-style:italic;color:#800000"> Register Account/Sign up</h1> <br>
+    <form method="POST" action="" >
+        {% csrf_token %}
+        {{form.as_p}} 
+        {% comment %} {{form.as_p}} ith render the wrapped in<p> tags. i e paragraph list pole display cheyyunnu {% endcomment %}
+       
+        <input class="btn btn-success" type="submit" value="Register Account">
+    </form>
+</div>
+{% endblock %}

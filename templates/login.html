@@ -1,0 +1,17 @@
+{% extends 'dependencies.html' %}
+{% load static%}
+{% block content %}
+<div class="container jumbotron">
+    <form method="POST" action="">
+        <img class="card-img-right" src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=350" alt="Card image cap">
+        {% comment %} <div class="d-flex;" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4DXQ83SxsMsCC9P9oqQ2Rcm6-sxshlR_2mA&usqp=CAU'); height:900vh">    {% endcomment %}
+
+        {% csrf_token %}
+        {% comment %} <img class="card-img-left" src="https://files.realpython.com/media/Discover-Flask-Part-2-Creating-a-Login-Page_Watermarked.bb23a84a8760.jpg" alt="Card image cap"> {% endcomment %}
+        <p><input type="text" name="username" placeholder="Username..."></p>
+        <p><input type="password" name="password" placeholder="Password..." ></p>
+        <input class="btn btn-success" type="submit" value="Login">
+        <p>Do not have an account<a href='{% url 'register' %}'> Register</a></p>
+    </form>
+</div>
+{% endblock %}

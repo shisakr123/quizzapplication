@@ -1,0 +1,36 @@
+{% comment %} {% extends 'dependies.html' %}
+{% block title %}edit profile{% endblock%}
+{% block content %}
+<div class="card text-center">
+  <div class="card-header">
+    <h1 class="text-center">Edit profile</h1>
+  </div>
+  <div class="card-body">
+  <form action="" method="POST" class="container">
+    {% csrf_token %}
+     
+    {% for i in customer %}
+    <div class="input-group mb-3">
+      <span class="input-group-text bg-dark text-secondary w-25">Username</span>
+      <input type="text" aria-label="First name" class="form-control" name="name" placeholder="{{i.username}}">
+    </div>
+    {% comment %} <div class="input-group mb-3">
+      <span class="input-group-text bg-dark text-secondary w-25">Email</span>
+      <input type="text" aria-label="First name" class="form-control" name="email" placeholder="{{i.email}}">
+    </div> {% endcomment %}
+    {% comment %} <div class="input-group mb-3">
+      <span class="input-group-text bg-dark text-secondary w-25">Password</span>
+      <input type="text" aria-label="First name" class="form-control" name="password" placeholder="{{i.password}}">
+    </div> {% endcomment %}
+    {% comment %} <div class="input-group mb-3">
+      <span class="input-group-text bg-dark text-secondary w-25">phone number</span>
+      <input type="text" aria-label="First name" class="form-control" name="phno" placeholder="{{i.phno}}">
+    </div> {% endcomment %}
+    {% comment %} <div class="card-footer text-muted d-flex justify-content-center">
+      <input type="submit" value="edit" class="btn btn-dark text-secondary w-25">
+    </div>
+    </div>
+    {% endfor %}
+  </form>
+</div>
+{% endblock %} {% endcomment %} 

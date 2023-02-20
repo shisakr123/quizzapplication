@@ -1,0 +1,23 @@
+{% comment %} {% extends 'dependencies.html' %}
+{% block title %}profile{% endblock title %}
+{% block content %}
+
+<h1 class="text-center">My profile</h1>
+<table class="container table table-dark table-stripped text-center">
+  <tr>
+    <th>username</th>
+    <th>password</th>
+    {% comment %} <th>phone no</th> {% endcomment %}
+  {% comment %} </tr>   {% endcomment %}
+  {% comment %} {% for i in form %}
+  <tr>
+    <td>{{i.username}}</td>
+    <td>{{i.password}}</td> {% endcomment %}
+    {% comment %} <td>{{i.phno}}</td> {% endcomment %}
+  {% comment %} </tr>
+  {% endfor %}
+</table>
+  <div class="container d-flex justify-content-end">
+    <a href="{% url 'editprofile' %}" class="btn btn-dark">Edit profile</a>
+  </div>
+{% endblock %} {% endcomment %} 
